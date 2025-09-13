@@ -1,173 +1,180 @@
+
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="ta">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sundown Studio</title>
-    <link rel="shortcut icon" href="./icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>அல்குர்ஆன் தஃப்சீர் தொடர் வகுப்பு</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Noto Sans Tamil', sans-serif;
+      background: linear-gradient(135deg, #e3f2fd, #ede7f6);
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: linear-gradient(90deg, #42a5f5, #5c6bc0);
+      color: white;
+      border-bottom-left-radius: 40% 10%;
+      border-bottom-right-radius: 40% 10%;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      line-height: 1.6;
+    }
+
+    header h2 {
+      margin: 0.5rem 0 0;
+      font-size: 1rem;
+      font-weight: normal;
+      opacity: 0.95;
+    }
+
+    header .sub {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+      background: rgba(255, 255, 255, 0.2);
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      color: #3949ab;
+      border-bottom: 2px solid #e3f2fd;
+      padding-bottom: 0.4rem;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 0.6rem 0.3rem;
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.2s;
+      color: white;
+    }
+
+    .btn-video {
+      background: #42a5f5;
+    }
+    .btn-video:hover {
+      background: #1e88e5;
+      transform: scale(1.05);
+    }
+
+    .btn-attendance {
+      background: #fdd835;
+      color: #333;
+    }
+    .btn-attendance:hover {
+      background: #fbc02d;
+      transform: scale(1.05);
+    }
+
+    /* 🔴 Common red clicked style */
+    .btn.clicked {
+      background: #d32f2f !important;
+      color: white !important;
+    }
+  </style>
 </head>
-
 <body>
-    <div id="loader">
-        <h1>ENVIRONMENTS</h1>
-        <h1>EXPERIENCES</h1>
-        <h1>CONTENT</h1>
-    </div>
-    <div id="fixed-image">
+  <header>
+    <h1>தாருத்தர்பியா வழங்கும்<br>அல்குர்ஆன் தஃப்சீர் தொடர் வகுப்பு</h1>
+    <h2>(விளக்கவுரை: அஷ்ஷெய்க் கலாநிதி ML முபாறக் மதனி حفظه الله)</h2>
+    <div class="sub">பாடபகுதி 2:145 – 2:203</div>
+  </header>
 
-    </div>
-    <div id="main">
+  <div class="container" id="classContainer"></div>
+<script>
+  const classes = [
+    { num: 66, portion: "2:145,146,147", video: "https://youtu.be/sXUHT1TFUpA?si=bATU0uE_kAogmJiJ", attendance: "https://forms.gle/3EQPQuMCnXTpMBi89" },
+    { num: 67, portion: "2:150", video: "https://youtu.be/HUvOBcldjJM?si=qT1pb52hX2WfDYMv", attendance: "https://forms.gle/6U5cJvKkpLbuiEsa6" },
+    { num: 68, portion: "2:148,149", video: "https://youtu.be/fEEqwPzp9zQ?si=a4IHjh-oNToM62QP", attendance: "https://forms.gle/QrrNFy2a5ZHqeuyv7" },
+    { num: 69, portion: "2:151,152", video: "https://youtu.be/Q47rHGU5sm8?si=nr2KmeS0hpEI__AL", attendance: "https://forms.gle/qiXCbLoTYFZW8xWP9" },
+    { num: 70, portion: "2:153-157", video: "https://youtu.be/-RuZWLFAk3o?si=mV_aEik-QHQpqT6Y", attendance: "https://forms.gle/PoXXS3mvyiRgghvi8" },
+    { num: 71, portion: "2:158", video: "https://youtu.be/oXV9aAX7LVo?si=enoPNBbdndJHpuat", attendance: "https://forms.gle/hg3zan4ysdk76yZM8" },
+    { num: 72, portion: "2:159-163", video: "https://youtu.be/jZh-ttya4pU?si=Ao6wY_k_JoKGccXl", attendance: "https://forms.gle/TSTqyfzGcZSF3ZHH8" },
+    { num: 73, portion: "2:164-167", video: "https://youtu.be/fPjOUh1C2io?si=8HA3T3E33JqoVeU5", attendance: "https://forms.gle/C7jtQDhddvctvQpj7" },
+    { num: 74, portion: "2:168,169", video: "https://youtu.be/TSyvknEfos4?si=Hgvljpt3ccYpY8_t", attendance: "https://forms.gle/5k1HxX4pDCLffmzt5" },
+    { num: 75, portion: "2:170,171", video: "https://youtu.be/ZuFZK-40Yrw?si=ow4Xk8x7aRrh6_8z", attendance: "https://forms.gle/U8jd3kU4hhXKEXAL6" },
+    { num: 76, portion: "2:172,173", video: "https://youtu.be/giA_SND51do?si=l7EXiA1AjIon6ygR", attendance: "https://forms.gle/ojyXD3nZmfHDjpHk6" },
+    { num: 77, portion: "2:174-176", video: "https://youtu.be/ZE0VR5A3C5U?si=0J-8y1LfhqwmPMFu", attendance: "https://forms.gle/VwXnBKxZgY1rHy1p9" },
+    { num: 78, portion: "2:177", video: "https://youtu.be/bkedYOr63cA?si=PLG10MHVG6f6viVZ", attendance: "https://forms.gle/5pY6SbsYA5XxFweK8" },
+    { num: 79, portion: "2:178,179", video: "https://youtu.be/i1gEm7tuC2E?si=aw9XSPwR-E43e48f", attendance: "https://forms.gle/e4tPcMSEQuhNcCDHA" },
+    { num: 80, portion: "2:180-182", video: "https://youtu.be/BWgWslnBtSo?si=kRcVqT0dWuTtLH0Q", attendance: "https://forms.gle/XdsLmBu2cbc1JUNn7" },
+    { num: 81, portion: "2:182,183", video: "https://youtu.be/w-AHfAZ9mnY?si=wYsKMcxF9OHRYffw", attendance: "https://forms.gle/2YnW5g8GXbkT98868" },
+    { num: 82, portion: "2:184,185", video: "https://youtu.be/U2byHQS8uws?si=hL35IhTbnuWcIpV2", attendance: "https://forms.gle/decEFQdnFXcXgzHA8" },
+    { num: 83, portion: "2:186,187", video: "https://youtu.be/3XDvkcQ-3EA?si=B59nrAeE4OfntGnI", attendance: "https://forms.gle/Gg8zrCF4UYBH7b4E7" },
+    { num: 84, portion: "2:188", video: "https://youtu.be/WvvppEJIw8M?si=exTYSHY0wUY-etE_", attendance: "https://forms.gle/QTU4JnMyWvP85v4S7" },
+    { num: 85, portion: "2:189", video: "https://youtu.be/MjNb1QKYnv8?si=Ak18l_KtLw8SNzCO", attendance: "https://forms.gle/DuKKWsg11XEkLxNc9" },
+    { num: 86, portion: "2:190-194", video: "https://youtu.be/3G8vsvCrWFo?si=688tmS8Mz05HCRIU", attendance: "https://forms.gle/ZNBDxvzK4qXhF8EN7" },
+    { num: 87, portion: "2:195", video: "https://youtu.be/P3od3nOQr78?si=rm7v2v8tuIH6RFsT", attendance: "https://forms.gle/MsBEqs1aRhwWEEFx7" },
+    { num: 88, portion: "2:196", video: "https://youtu.be/rUn_4zRrVzU?si=DYAbBN2UFl2DVzGc", attendance: "https://forms.gle/H9jYZQnHaW6umGE8A" },
+    { num: 89, portion: "2:197", video: "https://youtu.be/DgbcHiwU89w?si=qgxWpTs8-9TNJXKl", attendance: "https://forms.gle/ss6F39jt4goKWv7V8" },
+    { num: 90, portion: "2:198", video: "https://youtu.be/IlCkEXomjA0?si=_qtvfXn4SQcNlVZU", attendance: "https://forms.gle/rPoRdy2wXvPyADGs7" },
+    { num: 91, portion: "2:199,200", video: "https://youtu.be/ZRAoulBVwmY?si=G9KHaLLptAUPfjP-", attendance: "https://forms.gle/Z7YdRZMDQZDQF3wYA" },
+    { num: 92, portion: "2:203", video: "https://youtu.be/bIIRwL4Bdu4?si=w6zGhX-mYRK9yfXH", attendance: "https://forms.gle/9r6XAMrvnDbt2u3a7" },
+  ];
 
-        <div id="page1">
-            <nav>
-                <img src="https://uploads-ssl.webflow.com/64d3dd9edfb41666c35b15b7/64d3dd9edfb41666c35b15c2_Sundown%20logo.svg"
-                    alt="">
-                <div id="nav-part2">
-                    <h4><a href="#">Work</a></h4>
-                    <h4><a href="#">Studio</a></h4>
-                    <h4><a href="#">Contact</a></h4>
-                </div>
-                <h3>Menu</h3>
-            </nav>
-            <div id="center">
-                <div id="left">
-                    <h3>Sundown is a multi-disciplinary studio focused on creating unique, end-to-end experiences and
-                        environments.</h3>
-                </div>
-                <div id="right">
-                    <h1>SPACES <br>
-                        THAT <br>
-                        INSPIRE</h1>
-                </div>
 
-            </div>
-            <div id="hero-shape">
-                <div id="hero-1"></div>
-                <div id="hero-2"></div>
-                <div id="hero-3"></div>
-            </div>
-            <video autoplay loop muted src="./video.mp4"></video>
-        </div>
-        <div id="page2">
-            <div id="moving-text">
-                <div class="con">
-                    <h1>EXPERIENCES</h1>
-                    <div id="gola"></div>
-                    <h1>CONTENT</h1>
-                    <div id="gola"></div>
-                    <h1>ENVIRONMENTS</h1>
-                    <div id="gola"></div>
-                </div>
-                <div class="con">
-                    <h1>EXPERIENCES</h1>
-                    <div id="gola"></div>
-                    <h1>CONTENT</h1>
-                    <div id="gola"></div>
-                    <h1>ENVIRONMENTS</h1>
-                    <div id="gola"></div>
-                </div>
-                <div class="con">
-                    <h1>EXPERIENCES</h1>
-                    <div id="gola"></div>
-                    <h1>CONTENT</h1>
-                    <div id="gola"></div>
-                    <h1>ENVIRONMENTS</h1>
-                    <div id="gola"></div>
-                </div>
-            </div>
-            <div id="page2-bottom">
-                <h1>We are a group of design- driven, goal-focused creators,  producers, and designers who
-                    believe that the details  make all the difference.</h1>
-                <div id="bottom-part2">
-                    <img src="https://uploads-ssl.webflow.com/64d3dd9edfb41666c35b15b7/64d3dd9edfb41666c35b15d1_Holding_thumb-p-500.jpg"
-                        alt="">
-                    <p>We love to create, we love to solve, we love to collaborate, and we love to turn amazing ideas
-                        into reality. We’re here to partner with you through every step of the process and know that
-                        relationships are the most important things we build.</p>
-                </div>
-            </div>
-            <div id="gooey">
+    const container = document.getElementById("classContainer");
 
-            </div>
-        </div>
-        <div id="page3">
-            <div id="elem-container">
-                <div id="elem1" class="elem"
-                    data-image="https://images.unsplash.com/photo-1701001308648-7b731a52b8d7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNHx8fGVufDB8fHx8fA%3D%3D">
-                    <div class="overlay"></div>
-                    <h2>Makers Studio HOI</h2>
-                </div>
-                <div class="elem"
-                    data-image="https://images.unsplash.com/photo-1700975928909-da4a46227a47?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHx8">
-                    <div class="overlay"></div>
-                    <h2>50th Anniversary</h2>
-                </div>
-                <div class="elem"
-                    data-image="https://images.unsplash.com/photo-1701077137611-9be394bf62f0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMHx8fGVufDB8fHx8fA%3D%3D">
-                    <div class="overlay"></div>
-                    <h2>NYFW Popup</h2>
-                </div>
-                <div class="elem"
-                    data-image="https://images.unsplash.com/photo-1701014159309-4a8b84faadfe?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOXx8fGVufDB8fHx8fA%3D%3D">
-                    <div class="overlay"></div>
-                    <h2>Air Force 1 2021</h2>
-                </div>
-                <div class="elem"
-                    data-image="https://images.unsplash.com/photo-1700924546093-f914fd5b8814?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyOHx8fGVufDB8fHx8fA%3D%3D">
-                    <div class="overlay"></div>
-                    <h2>SOHO NYC</h2>
-                </div>
-                <div class="elem"
-                    data-image="https://images.unsplash.com/photo-1700601437860-e66da79cf6d2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1OXx8fGVufDB8fHx8fA%3D%3D">
-                    <div class="overlay"></div>
-                    <h2>SOHO 2023</h2>
-                </div>
-                <div class="elem"
-                    data-image="https://images.unsplash.com/photo-1700769025506-6c3dcb9ec9b7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw2OXx8fGVufDB8fHx8fA%3D%3D">
-                    <div class="overlay"></div>
-                    <h2>Play New Kidvision</h2>
-                </div>
-            </div>
-        </div>
-        <div id="page4">
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">Slide 1</div>
-                    <div class="swiper-slide">Slide 2</div>
-                    <div class="swiper-slide">Slide 3</div>
-                    <div class="swiper-slide">Slide 4</div>
-                    <div class="swiper-slide">Slide 5</div>
-                    <div class="swiper-slide">Slide 6</div>
-                    <div class="swiper-slide">Slide 7</div>
-                </div>
+    classes.forEach(cls => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <h3>வகுப்பு ${cls.num} - ${cls.portion}</h3>
+        <a href="${cls.video}" class="btn btn-video" target="_blank" data-key="video-${cls.num}">🎥 வீடியோ பார்க்க</a>
+        <a href="${cls.attendance}" class="btn btn-attendance" target="_blank" data-key="att-${cls.num}">📝 வருகைப் பதிவு</a>
+      `;
+      container.appendChild(card);
+    });
 
-            </div>
-        </div>
-        <div id="page5">
-
-        </div>
-        <div id="full-scr">
-            <div id="full-div1">
-                
-            </div>
-        </div>
-    </div>
-    <div id="footer">
-        <div id="footer-div">
-
-        </div>
-        <h1>Sundown</h1>
-        <div id="footer-bottom">
-
-        </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="script.js"></script>
+    // LocalStorage save highlight
+    document.querySelectorAll(".btn").forEach(btn => {
+      const key = btn.dataset.key;
+      if (localStorage.getItem(key) === "clicked") {
+        btn.classList.add("clicked");
+      }
+      btn.addEventListener("click", () => {
+        btn.classList.add("clicked");
+        localStorage.setItem(key, "clicked");
+      });
+    });
+  </script>
 </body>
-
 </html>
